@@ -1,0 +1,149 @@
+\documentclass{article}
+
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,ignoreheadfoot]{geometry}
+\usepackage{array}
+\usepackage{euler}
+\usepackage[svgnames,table]{xcolor}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{color}
+
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{tabularx,ragged2e,booktabs,caption}
+
+\author{Rohit Wason}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution*}{Solution}
+\renewcommand{\theenumi}{\alph{enumi}\)}
+
+\setlength{\columnseprule}{0.5pt} %Separator ruler width
+\def\columnseprulecolor{\color{blue}} %Separator ruler colour
+
+\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+\newcolumntype{A}{>{\columncolor{teal!50!white}}c}
+\newcolumntype{B}{>{\columncolor{LightGoldenrod}}c}
+
+\title{Lesson Plan - Irrationality of $\sqrt{2}$}
+\date{4/25/2021}
+
+\begin{document}
+\maketitle
+
+\section*{Background story (for class)}
+The set of real numbers, $\mathbb{R}$ is filled with both rational
+and irrational numbers. While the rationals are very well understood in our 
+vocabulary (think how often we use $1/2$ in our daily usage), the irrationals
+are still very mysterious. In fact, it is a proven fact that there are more
+(\textit{way many more}) irrationals than there are rationals.\\
+
+But the goal of this lesson is not to prove that fact (it takes some
+higher-level math to do that, actually). We will discuss what baffled the 
+Pythagoreans in ancient Greece when they discovered that the hypotenuse of a 
+``unit-right-triangle'' did not measure up to any number they knew.
+(brief discussion: Pythagorean formula for the hypotenuse, $c^2=a^2+b^2$).
+
+\section*{Supporting concepts}
+The following skills are useful to revise while teaching this material:
+\begin{itemize}
+  \item ``Proof by contradiction'',
+  \item Deriving a logical conclusion from known facts,
+  \item State contrapositive, given a logical statement,
+  \item Recognize the divisibility rules for common divisors ($3,4,9,11,\dots$),
+  \item Understand ``greatest common divisor''.
+\end{itemize}
+
+\section*{Learning Goals}
+By the end of this lesson the students will be able to
+\begin{itemize}
+  \item Understand that irrational numbers are also real,
+  \item Demonstrate, using basic vocabulary, that $\sqrt{2}$ is irrational.
+\end{itemize}
+
+\section*{Specific Expectations}
+\begin{itemize}
+  \item Express a rational number in the $p/q$ form, where $gcd(p,q)=1$,
+  \item Recognize a contradiction, while trying to express $\sqrt{2}$ as $p/q$.
+\end{itemize}
+
+\section*{Outline of the Course Content}
+% \begin{center}
+% \sffamily
+\arrayrulecolor{white}
+\arrayrulewidth=0.5pt
+\renewcommand{\arraystretch}{1.5}
+\rowcolors[\hline]{3}{.!50!White}{}
+\begin{tabular}{A|B}
+%   \multicolumn{2}{D}{\bfseries Example table}\\
+  \rowcolor{.!70!Black}
+  \arraycolor{White}\bfseries Unit Title &
+  \arraycolor{White}\bfseries Contents\\
+  Unit-1 & Review: Prime Factorization \\
+  Unit-2 & Review: $gcd()$ and the fact that for rationals $p/q, gcd(p,q)=1$ \\
+  Unit-3 & Build the proof with class \\
+\end{tabular}
+% \end{center}
+
+\pagebreak
+
+\section*{Course Content}
+\subsection*{Review: Prime Factorization}
+It's the fundamental fact of arithmetic, that every natural number
+($1,2,3,\dots$) can be written as a product of powers of Primes. Examples:
+\begin{itemize}
+  \item $25=2^0 \cdot 3^0 \cdot 5^2$
+  \item $112=2^4 \cdot 3^0 \cdot 5^0 \cdot 7^1$
+  \item $1=2^0 \cdot 3^0 \cdot 5^0 \dots$
+  \item $13=2^0 \cdot 3^0 \cdot 5^0 \cdot 7^0 \cdot 11^0 \cdot 13^1$ 
+    [class discussion: How are Primes unique in this context?]
+  \item Class activity: Ask one group of students to think of a number, and 
+    another to come up with its Prime factorization.
+\end{itemize}
+
+\subsection*{Review: Greatest Common Divisor ($gcd()$)}
+Common divisors (factors), as the name suggests, 
+are just factors of two (or more) numbers that are common. 
+The greatest of them is called the $gcd()$. Examples:
+\begin{itemize}
+  \item $gcd(14,7)=7$
+  \item $gcd(22,33)=11$
+  \item $gcd(25,112)=1$ [introduce: co-primes]
+  \item $gcd(13,20)=1$ [class discussion: How are Primes unique in this context?]
+\end{itemize}
+
+\subsection*{The proof}
+The instructor divides the class into small groups
+and alternates these steps between the groups, helping 
+them derive a conclusion from the prior step(s):
+\begin{itemize}
+  \item To prove: $\sqrt{2}$ is irrational.
+  \item Suppose the above statement is false.
+  \item This means that $\sqrt{2}$ can be written as $p/q$ 
+    where $gcd(p,q)=1$:
+    $$\sqrt{2} = \frac{p}{q}$$
+  \item Squaring both sides, we get:
+    $$2 = \frac{p^2}{q^2}$$
+  \item This implies that:
+    $$p^2=2q^2$$
+  \item Thus $p^2$ is even. The only way this would be true
+    is, if $p$ is even (class discussion: Why is this the case?)
+  \item This means that $p^2$ is actually divisible by $4$.
+  \item Hence $q^2$ and (using similar argument) $q$ must be even.
+  \item But if both $p$ and $q$ are even, $gcd(p,q)=2\ne{1}$.
+  \item \textbf{This is a contradiction!}
+  \item The conclusion: Our assumption in the first step that 
+    $\sqrt{2}$ can be written as $p/q, gcd(p,q)=1$, or that
+    $\sqrt{2}$ is rational, must be wrong.
+  \item The required statement is \textit{hence proved.}
+\end{itemize}
+
+\end{document}
