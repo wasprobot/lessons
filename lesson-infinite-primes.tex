@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm,ignoreheadfoot]{geometry}
+\usepackage{array}
+\usepackage[svgnames,table]{xcolor}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage{blindtext}
+\usepackage{multicol}
+\usepackage{color}
+
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+
+\usepackage{amsthm,amssymb,amsmath}
+\usepackage[shortlabels]{enumitem}
+
+\usepackage{tabularx,ragged2e,booktabs,caption}
+
+\author{Rohit Wason}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution*}{Solution}
+\renewcommand{\theenumi}{\alph{enumi}\)}
+
+\setlength{\columnseprule}{0.5pt} %Separator ruler width
+\def\columnseprulecolor{\color{blue}} %Separator ruler colour
+
+\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+\newcolumntype{A}{>{\columncolor{teal!50!white}}c}
+\newcolumntype{B}{>{\columncolor{LightGoldenrod}}c}
+
+\title{Lesson Plan - Infinite Primes}
+\date{4/21/2021}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+When discussing the Prime numbers, we often assume there are infinitely
+many of them. However, this fact is not so obvious. When I first posed this
+question to a friend, their first reaction was `aren\textquotesingle t there infinitely many of 
+everthing?'\\
+
+Many obvious things around us take some careful explaining and the infinitude of Primes
+is one of them. Primes have amused humans since early Greeks, and very
+little is known about the patterns these numbers exhibit. However, the fact that there
+is no limit to Prime numbers has been known to us at least since 300 B.C. While the
+earliest proof, due to Euclid, was different, the present proof is used more commonly today.
+
+\section*{Learning Goals}
+By the end of this lesson the students will be able to
+\begin{itemize}
+  \item Understand ``proof by contradiction'',
+  \item Generalize the concept of `divisibility',
+  \item Demonstrate, using basic vocabulary, that there is no limit to the Prime numbers.
+\end{itemize}
+
+\section*{Specific Expectations}
+\begin{itemize}
+  \item Recognize the divisibility rules for common divisors ($3,4,9,11,\dots$),
+  \item Derive a logical conclusion from known facts,
+  \item State contrapositive, given a logical statement,
+  \item Recognize a contradiction,
+\end{itemize}
+
+\section*{Outline of the Course Content}
+% \begin{center}
+% \sffamily
+\arrayrulecolor{white}
+\arrayrulewidth=0.5pt
+\renewcommand{\arraystretch}{1.5}
+\rowcolors[\hline]{3}{.!50!White}{}
+\begin{tabular}{A|B}
+%   \multicolumn{2}{D}{\bfseries Example table}\\
+  \rowcolor{.!70!Black}
+  \arraycolor{White}\bfseries Unit Title &
+  \arraycolor{White}\bfseries Contents\\
+  Unit-1 & Use Truth Tables to discuss logical contradiction. \\
+  Unit-2 & Discuss ``contrapositive'' \\
+  Unit-3 & Present the proof \\
+\end{tabular}
+% \end{center}
+
+\pagebreak
+
+\section*{Course Content}
+\subsection*{Logical Contradiction}
+A powerful method of proof that is frequently used in mathematics is 
+\textbf{proof by contradiction}. This method is based on he fact that a 
+logical statement, $P$ can either be true or false, but never both. The 
+idea is to prove that the statement $P$ is true by showing that 
+it cannot be false. This is done by assuming that $P$ is false
+and proving that it leads to a \textbf{contradiction} (e.g., ``$2$ is odd''
+is a logical contradiction).\\
+
+\begin{minipage}{\linewidth}
+\centering
+\captionof{table}{} \label{tab:title} 
+\begin{tabular}{l|l|l}
+  \rowcolor{.!70!Black}
+  \arraycolor{White}\bfseries $P$ &
+  \arraycolor{White}\bfseries $\neg{P}$ &
+  \arraycolor{White}\bfseries $P \land \neg{P}$\\
+  $T$ & $F$ & $F$ \\
+  $F$ & $T$ & $F$ \\
+\end{tabular}\par
+\bigskip
+Class discussion: Does this table show a contradiction?
+\end{minipage}
+
+\subsection*{Contrapositive}
+The \textbf{contrapositive} of the conditional statement
+$P \implies Q$ is the conditional statement
+$\neg{Q} \implies \neg{P}$. This is achieved since in the first statement
+$P$ was a \textit{necessary condition} for $Q$, the negation of $Q$ in the second 
+statement leads us to the negation of $P$.\\
+
+Breakout activity: (come up with examples similar to the following):
+\begin{itemize}
+  \item If $x=3$, then $x+4=7$.
+  \item If $x+4 \ne 7$, then $x\ne 3$.
+\end{itemize}
+
+\subsection*{The proof}
+The instructor divides the class into small groups
+and alternates these steps between the groups, helping 
+them derive a conclusion from the prior step(s):
+\begin{itemize}
+  \item To prove: There are infinitely many Primes.
+  \item Suppose the above statement is false.
+  \item This implies there are finitely man Prime numbers.
+    Let these be $p_1,p_2,p_3,\dots,p_n$.
+  \item Now construct a new number, 
+    $p=p_1 \times p_2 \times p_3 \times \dots \times p_n + 1.$
+  \item Observe: $p$ is larger than any of the primes (discuss examples if needed).
+  \item Since $p_1,p_2,p_3,\dots,p_n$ constitute all primes,
+    $p$ can't be a prime (define: Composite). Thus $p$ is Composite,
+    i.e., is divisible by one of the primes $p_1,p_2,p_3,\dots,p_n$.
+  \item But when we divide $p$ by either of $p_1,p_2,p_3,\dots,p_n$,
+    we get $1$ as a remainder.
+  \item \textbf{This is a contradiction!}
+  \item The conclusion: Our assumption in the first step ``there
+    are finitely many Prime numbers'', must be wrong.
+  \item The required statement is \textit{hence proved.}
+\end{itemize}
+
+\end{document}
